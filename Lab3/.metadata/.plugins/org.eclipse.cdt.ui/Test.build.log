@@ -1,0 +1,24 @@
+23:35:04 **** Incremental Build of configuration Debug for project Test ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/button.o"
+../Core/Src/button.c: In function 'getKeyInput':
+../Core/Src/button.c:48:32: error: 'GPIOx' undeclared (first use in this function); did you mean 'GPIOD'?
+   48 |  KeyReg0[2] = HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)
+      |                                ^~~~~
+      |                                GPIOD
+../Core/Src/button.c:48:32: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/button.c:48:39: error: 'GPIO_Pin' undeclared (first use in this function); did you mean 'GPIO_PinState'?
+   48 |  KeyReg0[2] = HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)
+      |                                       ^~~~~~~~
+      |                                       GPIO_PinState
+../Core/Src/button.c:48:48: error: expected ';' before 'if'
+   48 |  KeyReg0[2] = HAL_GPIO_ReadPin(GPIOx, GPIO_Pin)
+      |                                                ^
+      |                                                ;
+   49 |  if( (KeyReg0[0] == KeyReg0[1]) && (KeyReg0[1] == KeyReg0[2])){
+      |  ~~                                             
+make: *** [Core/Src/subdir.mk:46: Core/Src/button.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+23:35:04 Build Failed. 4 errors, 0 warnings. (took 315ms)
+
