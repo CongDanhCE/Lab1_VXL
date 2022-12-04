@@ -1,0 +1,14 @@
+main.c:72:6:LedRed	8	static
+main.c:75:6:LedGreen	8	static
+main.c:78:6:LedYellow	8	static
+main.c:81:6:LedBlue	8	static
+main.c:84:6:LedPink	8	static
+main.c:87:6:DeleteTask	8	static
+main.c:91:5:main	8	static
+main.c:143:6:SystemClock_Config	88	static
+main.c:186:13:MX_ADC1_Init	24	static
+main.c:231:13:MX_TIM2_Init	32	static
+main.c:276:13:MX_USART1_UART_Init	8	static
+main.c:309:13:MX_GPIO_Init	32	static
+main.c:332:6:HAL_TIM_PeriodElapsedCallback	16	static
+main.c:341:6:Error_Handler	4	static,ignoring_inline_asm
